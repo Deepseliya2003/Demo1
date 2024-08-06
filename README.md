@@ -1,4 +1,3 @@
-hello ! React-Native devlopes.
- hi kathan
+hello ! React-Native devlopers.
 
  ged'd
