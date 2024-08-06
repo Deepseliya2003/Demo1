@@ -1,1 +1,1 @@
-hello ! React-Native devlopes.
+hello ! React-Native devlopers.
