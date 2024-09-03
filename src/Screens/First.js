@@ -1,19 +1,35 @@
-import React from "react";
-import { SafeAreaView,View } from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useState } from "react";
+import { View,Text,Button,SafeAreaView } from 'react-native';
 
 const First=()=>{
+    const [user,setUser]=useState('')
+    const setData=async()=>{
+        await AsyncStorage.setItem("mine","Ajay patel")
+    }
+
+    const getData=async()=>{
+        const name=await AsyncStorage.getItem("mine");
+        setUser(name)
+    }
+
+    const removedata =async()=>{
+        const name=await AsyncStorage.removeItem("mine");
+        setUser('')
+    }
     return(
-        <SafeAreaView style={{flex:1,backgroundColor:'pink'}}>
-            <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
-            <AntDesign name="iconfontdesktop" size={50} />
-            <FontAwesome name="fonticons" size={50}/>
+        <SafeAreaView>
+            <View>
+                <Text>AsyncStorage with React-Native!!!{user}</Text>
+                <Button title="set data" onPress={setData}/>
+                <Button title="get data" onPress={getData}/>
+                <Button title="remove data" onPress={removedata}/>
 
             </View>
 
         </SafeAreaView>
     )
 }
+
 export default First;

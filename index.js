@@ -14,5 +14,7 @@ import Myscreen from './src/Screens/Myscreen';
 import ChartKit from './src/Screens/ChartKit';
 import Practices from './src/Screens/Practices';
 import HOC from './src/Screens/HOC';
+import First from './src/Screens/First';
+import Mydemopractice from './src/Screens/Mydemopractice';
 
-AppRegistry.registerComponent(appName, () => HOC);
+AppRegistry.registerComponent(appName, () => Mydemopractice);
